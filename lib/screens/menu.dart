@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/left_drawer.dart';
 import 'package:shopping_list/widgets/shop_card.dart';
+import 'package:shopping_list/screens/menu.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
   final List<ShopItem> items = [
-    ShopItem("Lihat Produk", Icons.checklist),
-    ShopItem("Tambah Produk", Icons.add_shopping_cart),
-    ShopItem("Logout", Icons.logout),
+    ShopItem("Lihat Produk", Icons.checklist, Colors.blue),
+    ShopItem("Tambah Produk", Icons.add_shopping_cart, Colors.green),
+    ShopItem("Logout", Icons.logout, Colors.red),
   ];
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -71,4 +72,12 @@ class MyHomePage extends StatelessWidget {
       drawer: const LeftDrawer(),
     );
   }
+}
+
+class ShopItem {
+  final String name;
+  final IconData icon;
+  final Color color;
+
+  ShopItem(this.name, this.icon, this.color);
 }
